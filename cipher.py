@@ -59,7 +59,7 @@ def brute_force():
     for guess in guesses:
         if guess in english_words:
             return f"Your word probably was: {guess}, with a lag of {guesses.index(guess)}"
-    return f"The message probably was not an English word, but there are the possibilities: {guesses}"
+    return f"The message probably was not an English word, but here are the possibilities: {guesses}"
 
 
 def load_words():
@@ -84,7 +84,7 @@ lag = input("Choose your rotor lag (0-25): ")
 # check if lag is int
 while not lag.isnumeric() or isinstance(lag, int):
     print("Please type an integer value")
-    lag = input("Choose your rotor lag: ")
+    lag = input("Choose your rotor lag (0-25): ")
 
 # encode message based on lag
 encoded_message = encode(msg, int(lag))
